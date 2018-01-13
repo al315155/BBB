@@ -8,6 +8,8 @@ public class Interface : MonoBehaviour {
 
 	BombManager bomb;
 
+	public GameObject toolBox;
+
 	private bool toolBoxOpened;
 	private bool helpPanelOpened;
 
@@ -32,6 +34,10 @@ public class Interface : MonoBehaviour {
 		}
 	}
 
+//	public void AddTool2Box(GameObject tool){
+//		tool.transform.SetParent (toolBox.transform);
+//	}
+
 	public void ToolBox(){
 		if (toolBoxOpened) {
 			CloseToolBox ();
@@ -43,12 +49,12 @@ public class Interface : MonoBehaviour {
 	}
 
 	private void OpenToolBox(){
-		transform.position += Vector3.left * dist;
+		transform.localPosition += Vector3.left * dist;
 		toolBoxOpened = true;
 	}
 
 	private void CloseToolBox(){
-		transform.position += Vector3.right * dist;
+		transform.localPosition += Vector3.right * dist;
 		toolBoxOpened = false;
 	}
 

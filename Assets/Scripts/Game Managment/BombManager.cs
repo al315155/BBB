@@ -8,6 +8,8 @@ public class BombManager : MonoBehaviour {
 
 	private GameManager gameManger;
 
+	//public Interface gameInterface;
+
 	private string cursorName;
 	public Texture2D ScrewdriverImg;
 	public Texture2D PliersImg;
@@ -26,17 +28,8 @@ public class BombManager : MonoBehaviour {
 	private bool timeLeft;
 	private bool startCount;
 
-	public AudioSource AS{
-		set{ }
-		get{ return audio; }
-	}
-
-	public void PlayCorrect(){
-		audio.PlayOneShot (correctAudio);
-	}
-
-	public void PlayWrong(){
-		audio.PlayOneShot (wrongAudio);
+	void Awake(){
+		cursorName = "None";
 	}
 
 	void Start () {
@@ -62,9 +55,7 @@ public class BombManager : MonoBehaviour {
 			avatar.sprite = Resources.Load<Sprite> ("Textures/Avatars/Avatar06");
 			break;
 		}
-
-		cursorName = "None";
-
+			
 		audio = GetComponent<AudioSource> ();
 
 		minutsLabel.text = minuts + ":";
@@ -151,6 +142,14 @@ public class BombManager : MonoBehaviour {
 		SceneManager.LoadScene ("Menu");
 	}
 
+//	public void AddTool(GameObject tool, GameObject boxTool){
+//		GameObject bT = Instantiate (boxTool);
+//		bT.name = tool.name;
+//		gameInterface.AddTool2Box (bT);
+//		bT.GetComponent<Button>().onClick.AddListener(() => SelectTool(bT.GetComponent<Button>()));
+//		Destroy (tool);
+//	}
+
 	private void ActualizeClock(){
 		if (seconds >= 0) {
 			seconds -= Time.deltaTime;
@@ -188,5 +187,18 @@ public class BombManager : MonoBehaviour {
 		if (seconds >= 0) {
 			secondsLabel.text = "" + (int)seconds;
 		}
+	}
+
+	public AudioSource AS{
+		set{ }
+		get{ return audio; }
+	}
+
+	public void PlayCorrect(){
+		audio.PlayOneShot (correctAudio);
+	}
+
+	public void PlayWrong(){
+		audio.PlayOneShot (wrongAudio);
 	}
 }

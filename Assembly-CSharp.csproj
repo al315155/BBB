@@ -61,8 +61,10 @@
      <Compile Include="Assets\Scripts\Game Managment\Levels\Level00.cs" />
      <Compile Include="Assets\Scripts\Game Managment\Levels\Level01.cs" />
      <Compile Include="Assets\Scripts\Game Managment\Levels\Level02.cs" />
-     <Compile Include="Assets\Scripts\Game Managment\Objects\CodigoAcertijo.cs" />
+     <Compile Include="Assets\Scripts\Game Managment\Levels\Level03.cs" />
+     <Compile Include="Assets\Scripts\Game Managment\Objects\Puzzle.cs" />
      <Compile Include="Assets\Scripts\Game Managment\Objects\Screw.cs" />
+     <Compile Include="Assets\Scripts\Game Managment\Objects\ScrewObject.cs" />
      <Compile Include="Assets\Scripts\Game Managment\Objects\SimpleButton.cs" />
      <Compile Include="Assets\Scripts\Game Managment\Objects\StayPressedBtn.cs" />
      <Compile Include="Assets\Scripts\Game Managment\Objects\WireChild.cs" />
